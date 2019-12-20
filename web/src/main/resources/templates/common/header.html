@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="renderer" content="webkit">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>嗨够</title>
+        <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/theme.css">
+        <link rel="stylesheet" href="/css/premium.css">
+        <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-table.css">
+        <link rel="stylesheet" type="text/css" href="/css/common/header.css"/>
+    </head>
+    <body class="theme-blue" th:fragment="body">
+           <a name="startPotion"></a>
+           <div class="navbar navbar-default" style="z-index: 99;">
+                <div class="navbar-header">
+                  <span class="navbar-brand glyphicon glyphicon-th-large" style="font-size: 30px; padding-top: 15px;">
+                  </span>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <input type="hidden" value="${cookie.adminId.value}" id="headerAdmin">
+                <div class="navbar-collapse collapse" id="collapse1">
+                  <ul id="main-menu" class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span>
+                            <span class="uname" th:text="${cookie?.adminName?.value}"></span>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                      <ul class="dropdown-menu admin_list">
+                        <li><a tabindex="-1" href="#" onclick="setPersonal(${cookie.adminId.value })">修改个人信息</a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="${pageContext.request.contextPath}/admin/login.jsp">退出账号</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="modal fade" id="personal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="width: 800px;">
+                    <%@include file="../admin/personal_info.jsp"%>
+                </div>
+            </div>
+            <script src="/lib/jquery-2.1.1.min.js"></script>
+            <script src="/lib/bootstrap/js/bootstrap.js"></script>
+            <script  src="/lib/bootstrap/js/bootstrap-table.js"></script>
+            <script  src="/js/header.js"></script>
+            <script  src="/js/popup.js"></script>
+            <script  src="/js/checkoutNext.js"></script>
+            <script type="text/javascript">
+                $.ajaxSetup({
+                    contentType:"application/x-www-form-urlencoded;charset=utf-8",
+                    complete:function(XMLHttpRequest,textStatus){
+                        var flag = XMLHttpRequest.getResponseHeader('flag');
+                        if (flag==2) {
+                            location.href="../admin/login.jsp";
+                        }
+                        setTimeout(activeFlag, 1000);
+                    }
+                 });
+                $(".navbar-brand").click(function() {
+                    $("body").toggleClass('menuT-open');
+                })
+           </script>
+    </body>
+
+</html>

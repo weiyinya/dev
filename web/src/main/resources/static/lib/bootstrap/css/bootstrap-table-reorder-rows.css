@@ -1,0 +1,7 @@
+.reorder_rows_onDragClass td {
+    background-color: #eee;
+    box-shadow: 6px 3px 5px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;
+}
+.reorder_rows_onDragClass td:last-child {
+    box-shadow: 1px 8px 6px -4px #555, 0 1px 0 #ccc inset, 0 -1px 0 #ccc inset;
+}

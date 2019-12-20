@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        # 定义输入流
+        myInput:
+          # 定义目的地 （对应rabbitmq的exchange）
+          destination: mystream
+          # 定义消费组 （group）
+          ## 相同组别的微服务只有一个可以消费消息(竞争关系); 如果不定义组别，则多个相同微服务都会收到消息(广播)
+          ### 同一个组别,其实对应rabbitmq的同一个队列，多个消费者
+          group: group-one
+          consumer:
+            #通过该参数开启消费者分区功能
+            partitioned: true
+        myOutput:
+          destination: mystream
+          producer:
+            # 通过该参数指定了分区键的表达式规则，可以根据实际的输出消息规则配置 SpEL 来生成合适的分区键
+            partitionKeyExpression: payload
+            # 分区数量
+            partitionCount: 1
+      # 该参数指定了当前消费者的总实例数量
+      instance-count: 1
+      # 指定了当前实例的索引号
+      instance-index: 0

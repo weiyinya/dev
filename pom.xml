@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wy</groupId>
+	<artifactId>dev</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>dev</name>
+	<description>Wy dev project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.2.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!--jdk版本-->
+		<java.version>8</java.version>
+        <!--sping-cloud版本-->
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<!--容灾框架版本-->
+		<hystrix.version>1.5.12</hystrix.version>
+		<!--swagger版本-->
+		<springfox-swagger2.version>2.6.1</springfox-swagger2.version>
+		<springfox-swagger-ui.version>2.6.1</springfox-swagger-ui.version>
+
+		<jackson.version>2.9.6</jackson.version>
+	</properties>
+
+
+	<modules>
+		<!--设计模式-->
+        <module>design-patterns</module>
+		<!--算法-->
+		<module>algorithm</module>
+		<!--rabbitmq-->
+        <module>rabbitmq</module>
+		<!--rabbitmq集成spring-->
+		<module>rabbitmq-spring</module>
+        <module>spring</module>
+		<!--activiti引擎-->
+        <module>activiti</module>
+		<module>hadoop</module>
+		<module>jvm</module>
+        <module>socket</module>
+        <module>rx</module>
+        <module>reactor</module>
+    </modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.31</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.4</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>nexus-aliyun</id>
+			<name>Nexus aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+
+</project>

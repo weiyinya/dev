@@ -1,0 +1,26 @@
+spring:
+  rabbitmq:
+    # 发送确认
+    publisher-confirms: true
+    # 消费确认
+    publisher-returns: true
+
+    listener:
+
+      type: simple
+
+      simple:
+        # 开启ack
+        acknowledge-mode: manual
+
+        # 拒绝的消息是否重回队列（如果不重回，尽量回到死信队列）
+        default-requeue-rejected: false
+
+        retry:
+          # 启用消费端重试 （不是服务端消息重发）
+          enabled: true
+          # 最大重试次数
+          max-attempts: 3
+          # 重试间隔
+          max-interval: 1000
+

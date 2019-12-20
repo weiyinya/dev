@@ -1,0 +1,8 @@
+# spring项目存活时间 ms
+app:
+  duration: 10000
+
+# 默认激活的配置
+spring:
+  profiles:
+    active:
