@@ -9,7 +9,9 @@ public interface HeapOperator {
     //插入数据
     void insert(int value);
     //删除堆顶数据
-    void dropTop(int value);
+    void dropTop();
     //建堆
     void buildHeap(int[] eles);
+
+    void println();
 }
