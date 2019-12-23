@@ -102,6 +102,11 @@ public class Heap implements HeapOperator {
         IntStream.of(heapArray).limit(used + 1).forEach(System.out::println);
     }
 
+    /**
+     * 建堆可按自下而上的插入逻辑来，也可按自上而下的逻辑来
+     * @param eles
+     * @return
+     */
     public static int[] buildHeap(int[] eles) {
         //而这里要从非叶子节点自下而上进行堆化
         for (int i = (eles.length-1) / 2; i >= 1; --i) {
