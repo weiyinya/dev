@@ -11,6 +11,12 @@ public class Sort {
 
     /**
      * 1、插入排序
+     *  基本原理：
+     *      主要是将数组分为有序区和待排序区。遍历待排序区插入到有序区中
+     *  核心操作：
+     *      理解i、j下标变动就好
+     *      从待排序区取出待排序元素后，放到临时变量中（这时它本来的位置就空了），
+     *      倒序遍历排序区，和temp比较，如果大了就向后移动（增序排列），直到temp小于等于已排序元素时，就将temp放入数组的j下标位置
      */
     public static void insertSort(int[] integers) {
         for (int i=1; i<integers.length; i++){
