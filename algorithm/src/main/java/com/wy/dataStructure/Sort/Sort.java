@@ -48,12 +48,4 @@ public class Sort {
             }
         }
     }
-
-    public static void main(String[] args) {
-        int[] integers = new int[]{1, 6, 3, 2, 4, 7, 5};
-        bubbleSort(integers);
-        for (int integer : integers) {
-            System.out.print(integer + ", ");
-        }
-    }
 }
