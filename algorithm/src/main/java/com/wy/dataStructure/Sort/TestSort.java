@@ -7,7 +7,7 @@ package com.wy.dataStructure.Sort;
 public class TestSort {
     public static void main(String[] args) {
         int[] integers = new int[]{1, 6, 3, 2, 4, 7, 5};
-        MergeSort.sort(integers);
+        QuickSort.sort(integers);
         for (int integer : integers) {
             System.out.print(integer + ", ");
         }
