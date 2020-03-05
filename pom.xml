@@ -52,6 +52,7 @@
         <module>socket</module>
         <module>rx</module>
         <module>reactor</module>
+        <module>leetcode</module>
     </modules>
 
 	<dependencies>
