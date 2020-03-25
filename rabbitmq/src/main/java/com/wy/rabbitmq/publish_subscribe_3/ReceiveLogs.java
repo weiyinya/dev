@@ -1,11 +1,11 @@
 package com.wy.rabbitmq.publish_subscribe_3;
 
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
+import com.wy.rabbitmq.CommonConn;
 
 /**
+ * 消费者
  * @Author wy
  * @Date 2019/2/9
  */
@@ -13,10 +13,7 @@ public class ReceiveLogs {
     private static final String EXCHANGE_NAME = "logs";
 
     public static void main(String[] argv) throws Exception {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+        Channel channel = CommonConn.conn.createChannel();
 
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 

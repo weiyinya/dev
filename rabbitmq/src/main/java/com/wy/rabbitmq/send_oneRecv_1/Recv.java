@@ -20,6 +20,12 @@ public class Recv {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
+        /**
+         *
+         * durable 是否持久化
+         * exclusive 是否独占（被当前线程）
+         *
+         */
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 

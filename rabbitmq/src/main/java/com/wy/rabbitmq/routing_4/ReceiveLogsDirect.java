@@ -1,6 +1,8 @@
 package com.wy.rabbitmq.routing_4;
 
-import com.rabbitmq.client.*;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.DeliverCallback;
+import com.wy.rabbitmq.CommonConn;
 
 /**
  * 消费者
@@ -12,10 +14,7 @@ public class ReceiveLogsDirect {
     private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] argv) throws Exception {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+        Channel channel = CommonConn.conn.createChannel();
 
         channel.exchangeDeclare(EXCHANGE_NAME, "direct");
         String queueName = channel.queueDeclare().getQueue();

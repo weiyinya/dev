@@ -3,6 +3,7 @@ package com.wy.rabbitmq.publish_subscribe_3;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.wy.rabbitmq.CommonConn;
 
 import java.util.Scanner;
 
@@ -19,9 +20,7 @@ public class EmitLog {
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
-        try (Connection connection = factory.newConnection();
-            Channel channel = connection.createChannel()) {
-
+        try (Channel channel = CommonConn.conn.createChannel()) {
             //定义exchange
             channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 

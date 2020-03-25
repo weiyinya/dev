@@ -2,8 +2,8 @@ package com.wy.rabbitmq.send_moreRecv_2;
 
 
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.wy.rabbitmq.CommonConn;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -16,14 +16,12 @@ import java.util.concurrent.TimeoutException;
  */
 public class NewTask {
     private final static String QUEUE_NAME = "hello";
-    private final static String TEST_QUEUE = "test_queue";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
 
-        try (Connection connection = factory.newConnection();
-             Channel channel = connection.createChannel()) {
+        try (Channel channel = CommonConn.conn.createChannel()) {
 
             //******队列消息不持久化版本******
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);

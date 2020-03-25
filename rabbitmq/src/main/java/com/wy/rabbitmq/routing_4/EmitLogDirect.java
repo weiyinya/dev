@@ -2,8 +2,8 @@ package com.wy.rabbitmq.routing_4;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.wy.rabbitmq.CommonConn;
 
 import java.util.Scanner;
 
@@ -20,8 +20,7 @@ public class EmitLogDirect {
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
-        try (Connection connection = factory.newConnection();
-            Channel channel = connection.createChannel()) {
+        try (Channel channel = CommonConn.conn.createChannel()) {
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
 
             while (true){
