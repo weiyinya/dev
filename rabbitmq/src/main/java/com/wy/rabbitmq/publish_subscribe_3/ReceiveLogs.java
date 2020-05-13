@@ -5,7 +5,7 @@ import com.rabbitmq.client.DeliverCallback;
 import com.wy.rabbitmq.CommonConn;
 
 /**
- * 消费者
+ * 订阅者
  * @Author wy
  * @Date 2019/2/9
  */

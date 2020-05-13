@@ -53,6 +53,7 @@
         <module>rx</module>
         <module>reactor</module>
         <module>leetcode</module>
+        <module>netty</module>
     </modules>
 
 	<dependencies>
