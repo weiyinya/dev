@@ -98,6 +98,7 @@ public class Test {
         Semaphore semaphore = new Semaphore(2);
         System.out.println("aaa");
         System.out.println("测试");
+        System.out.println("测试2");
     }
 
 }
