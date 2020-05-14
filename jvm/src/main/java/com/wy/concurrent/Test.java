@@ -100,6 +100,7 @@ public class Test {
 
         IntStream.range(1,10).forEach(System.out::println);
         System.out.println(101);
+        System.out.println(102);
     }
 
 }
