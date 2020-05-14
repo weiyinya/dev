@@ -99,6 +99,7 @@ public class Test {
         Semaphore semaphore = new Semaphore(2);
 
         IntStream.range(1,10).forEach(System.out::println);
+        System.out.println(101);
     }
 
 }
