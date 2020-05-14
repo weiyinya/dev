@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -96,10 +97,8 @@ public class Test {
     public void semaphoreTest() {
 
         Semaphore semaphore = new Semaphore(2);
-        System.out.println("aaa");
-        System.out.println("测试2");
 
-        System.out.println("测试3");
+        IntStream.range(1,10).forEach(System.out::println);
     }
 
 }
