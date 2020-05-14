@@ -101,6 +101,9 @@ public class Test {
         IntStream.range(1,10).forEach(System.out::println);
 
         System.out.println("fasdfasdf");
+        System.out.println("测试3");
+
+        System.out.println(12412312);
     }
 
 }
