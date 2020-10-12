@@ -54,6 +54,8 @@
         <module>reactor</module>
         <module>leetcode</module>
         <module>netty</module>
+        <module>zookeeper</module>
+        <module>elasticjob</module>
     </modules>
 
 	<dependencies>
