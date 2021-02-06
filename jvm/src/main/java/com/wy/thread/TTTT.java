@@ -18,11 +18,9 @@ public class TTTT {
 
     public static void main(String[] args) throws IOException {
 
-        if (f1()){
-            System.out.println(111);
-        } else if (f2()){
-            System.out.println(222);
-        }
+        String ss = "ocalhost:8081/station/getImage?head=Public\\Upload\\admin\\2020-11-07\\18opcnc55uontwe.jpg";
+        ss = ss.replaceAll("\\\\", "/");
+        System.out.println(ss);
     }
 
     public static boolean f1(){
@@ -34,5 +32,7 @@ public class TTTT {
         System.out.println("bbb");
         return true;
     }
+
+
 
 }

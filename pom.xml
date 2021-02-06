@@ -56,6 +56,10 @@
         <module>netty</module>
         <module>zookeeper</module>
         <module>elasticjob</module>
+        <module>spring-util</module>
+        <module>springboot</module>
+        <module>springboot</module>
+        <module>kafka</module>
     </modules>
 
 	<dependencies>

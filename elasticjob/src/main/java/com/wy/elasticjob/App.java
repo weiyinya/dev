@@ -19,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App 
 {
     private static final String dockerAddr = "172.17.0.2";
+    private static final String remoteAddr = "49.233.16.56";
     private static final String localAddr = "localhost";
 
     private static final String port = "2181";
@@ -29,7 +30,7 @@ public class App
     }
 
     private static CoordinatorRegistryCenter createRegistryCenter() {
-        CoordinatorRegistryCenter regCenter = new ZookeeperRegistryCenter(new ZookeeperConfiguration(localAddr + ":" + port, "my-job"));
+        CoordinatorRegistryCenter regCenter = new ZookeeperRegistryCenter(new ZookeeperConfiguration(remoteAddr + ":" + port, "my-job"));
         regCenter.init();
         return regCenter;
     }
