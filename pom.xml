@@ -60,6 +60,7 @@
         <module>springboot</module>
         <module>springboot</module>
         <module>kafka</module>
+        <module>redis</module>
     </modules>
 
 	<dependencies>

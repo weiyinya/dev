@@ -9,9 +9,13 @@ package com.wy.base;
  * @date 2020-03-11 17:11
  */
 public class Finally {
+
+    private static final String config = "哈哈哈";
+
     public static void main(String[] args) {
         Finally f = new Finally();
         System.out.println(f.f());
+        System.out.println(config);
     }
 
     public int f(){
