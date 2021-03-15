@@ -37,6 +37,7 @@ public class Knapsack01 {
 
     /**
      * 计算最大承重（递归法）
+     *  如果没有‘枝剪’处理的话 那么递归树是高度为n的完全二叉树
      * @return
      */
     public int countMaxW() {
