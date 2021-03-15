@@ -36,7 +36,7 @@ public class Knapsack01 {
     }
 
     /**
-     * 计算最大承重
+     * 计算最大承重（递归法）
      * @return
      */
     public int countMaxW() {
@@ -58,7 +58,7 @@ public class Knapsack01 {
         /**
          * 0 不放
          */
-        int countItme0 = this.countItem01(itemIndex+1, countMaxW);
+        int countItem0 = this.countItem01(itemIndex+1, countMaxW);
 
         /**
          * 1 放
@@ -77,7 +77,7 @@ public class Knapsack01 {
         /**
          * 比较放与不放的结果，取最重的那个
          */
-        if (countItme0>countItem1) return countItme0;
+        if (countItem0>countItem1) return countItem0;
         return countItem1;
     }
 
