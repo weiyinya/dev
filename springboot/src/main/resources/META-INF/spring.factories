@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.wy.springboot.config.TestAutoConfig,\
+com.wy.springboot.config.TestConfig
