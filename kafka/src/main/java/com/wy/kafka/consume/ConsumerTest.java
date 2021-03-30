@@ -71,7 +71,7 @@ public class ConsumerTest{
     }
 
     public static void main(String args[]) {
-        ConsumerTest test1 = new ConsumerTest("KAFKA_TEST");
+        ConsumerTest test1 = new ConsumerTest(topicc);
         test1.run();
     }
 }

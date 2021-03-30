@@ -45,6 +45,16 @@ public class ProductTest {
          * 默认linger.ms=0，即不进行批发送。
          */
         props.put("linger.ms", 500);
+
+        /**
+         * 消息分区策略（由生产者决定）
+         *  1、轮询策略
+         *  2、随机策略
+         *  3、根绝key映射
+         *  kafka默认采用1、3。如果消息设置了key，那么根据key做映射；否则进行轮询
+         * @see org.apache.kafka.clients.producer.Partitioner
+         */
+        props.put("partitioner.class", "");
         props.put("key.serializer", StringSerializer.class.getName());
         props.put("value.serializer", StringSerializer.class.getName());
         this.producer = new KafkaProducer<String, String>(props);
